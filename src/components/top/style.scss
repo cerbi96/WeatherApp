@@ -9,6 +9,7 @@
     .title{
         font-size:20px;
         color:#fff;
+        margin-top: 6px;
 
 
     }
@@ -53,4 +54,15 @@
 color:#fff;
 margin-top: 1.2em;
 
+}
+.btn-select-location{
+    
+    background-color: #49DCC2;
+    font-family: Roboto,sans-serif;
+    border-radius: 3px;
+    color:#222;
+    
+}
+.btn-select-location:hover{
+    background-color: #50EDD3;
 }
