@@ -8,8 +8,8 @@ export default class BottomSection extends React.Component{
         this.state = {}
     }
     render(){
-        return <div>
-            BOTTOM SECTION
+        return <div className="bottom-container">
+            
         </div>
     }
 }
