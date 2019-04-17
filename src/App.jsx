@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import "./sass/app.scss";
 
@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cityName: "Madrid",
+      cityName: "London",
       forecastDays: 5,
       isloading: true
     };
