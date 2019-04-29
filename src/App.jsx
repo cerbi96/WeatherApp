@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import logo from "./logo.svg";
+ import logo from "./logo.svg";
 import "./App.css";
 import "./sass/app.scss";
 
@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cityName: "London",
+      cityName: "Lodz",
       forecastDays: 5,
       isloading: true
     };
@@ -45,7 +45,7 @@ class App extends Component {
       });
   }
 
-  componentWillUnmount() {}
+  
 
   render() {
     const { isLoading,cityName, temp_c, isDay, text, iconURL } = this.state;
@@ -53,7 +53,8 @@ class App extends Component {
     return (
       <div className="app-container">
         <div className="main-container">
-          {isLoading&& <h3>Loading in progress ...</h3>}
+          {isLoading && <h3>Loading in progress ...</h3>}
+          {!isLoading &&(
           <div className="top-section">
             <TopSection
               location={cityName}
@@ -62,7 +63,7 @@ class App extends Component {
               text={text}
               iconURL={iconURL}
             />
-          </div>
+          </div>)}
           <div className="bottom-section">
             <BottomSection />
           </div>

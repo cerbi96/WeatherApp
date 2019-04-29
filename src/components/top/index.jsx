@@ -10,51 +10,42 @@ export default class TopSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSelectLLocationOpen: false
+    isSelectLocationOpen: false,
     };
   }
 
-  onToggleSelectLocation() {
-    this.setState(prev => ({
-      isSelectLLocationOpen: !prev.isSelectLocationOpen
-    }));
-  }
+ onToggleSelectLocation(){
+   this.setState((prevState) =>({isSelectLocationOpen: !prevState.isSelectLocationOpen}))
+ }
 
   render() {
-    const { isSelectLocationOpen } = this.state;
+    const {isSelectLocationOpen} = this.state;
 
     return (
       <div className="top-container">
         <div className="title">Weather App</div>
         <Weather {...this.props} />
+
+        
+
         <Manager>
-          <Reference>
-            {({ ref }) => (
-              <button
-                className="btn btn-select-location"
-                ref={ref}
-                onClick={this.onToggleSelectLocation.bind(this)}
-              >
-                Select Location
-              </button>
-            )}
-          </Reference>
-          <Popper placement="top">
-            {({ ref, style, placement, arrowProps }) =>
-              isSelectLocationOpen && (
-                <div
-                  className="popup-container"
-                  ref={ref}
-                  style={style}
-                  data-placement={placement}
-                >
-                  Popper Element
-                  <div ref={arrowProps.ref} style={arrowProps.style} />
-                </div>
-              )
-            }
-          </Popper>
-        </Manager>
+    <Reference>
+      {({ ref }) => (
+        <button className="btn btn-select-location" ref={ref} onClick={this.onToggleSelectLocation.bind(this)}>Select Location</button>
+      )}
+    </Reference>
+    <Popper placement="top">
+      {({ ref, style, placement, arrowProps }) => 
+      isSelectLocationOpen && (
+        <div className="popup-container" ref={ref} style={style} data-placement={placement}>
+          Popper element
+          <div ref={arrowProps.ref} style={arrowProps.style} />
+        </div>
+      )}
+    </Popper>
+  </Manager>
+
+
       </div>
     );
   }
